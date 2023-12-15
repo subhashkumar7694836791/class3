@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<style>
+    *
+    {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    html,body
+    {
+      
+    height:100%;
+    width:100%;
+    }
+    .dashboard{
+        width: 100%;
+        min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+        /* background-color: aqua; */
+    }
+    .dashboard>h1{
+        color: aliceblue;
+        padding: 10px 30px;
+        background-color: rgb(122, 122, 248);
+    }
+    .details{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        border-bottom: 1px solid gray;
+        justify-content: space-around;
+    }
+    .details h1{
+        font-size: 23px;
+        font-weight: 500;
+    }
+    .data{
+        display: flex;
+        justify-content: space-between;
+        height: 120px;
+        width: 100%;
+        align-items: center;
+        /* background-color: red; */
+    }
+    .data img{
+        min-width: 20%;
+        height: 100px;
+        /* width: 100px; */
+        padding: 0px 2vw;
+        border-radius: 5px;
+    }
+    .data h3{
+        width: 23%;
+        font-size: 16px;
+       text-align: start;
+       cursor: pointer;
+        font-weight: 700;
+        color: rgb(114, 114, 227);
+    }
+    .data h3:nth-child(5){
+        width: 10%;
+    }
+    .data h3 a{
+        text-decoration: none;
+        color: black;
+        padding: 5px 10px;
+        border: 2px solid gray;
+        font-size: 15px;
+        
+    }
+</style>
+<body> 
+    <%- include('nav')%>
+    <div class="dashboard">
+        <h1>Register Users Details</h1>
+        <div class="details">
+            <h1>image</h1>
+           <h1>username</h1>
+           <h1>email address</h1>
+           <h1>contact no</h1>
+           <h1>update field</h1>
+        </div>
+        <% createUser.forEach(function(val){ %>
+        <div class="data">
+            <img src="<%=val.image%>" alt="">
+            <h3>@<%= val.username %></h3>
+            <h3><%=val.email%></h3>
+            <h3><%=val.contact%></h3>
+            <h3><a href="#">edit</a></h3>
+        </div>
+        <% }) %>
+    </div>
+    <div class="card">
+
+  
+    
+    
+  
+   
+</div>
+</body>
+</html>
